@@ -6,7 +6,7 @@
 
 This is a stunning interactive portfolio website for Sourabh Khairwal, showcasing his skills as a full-stack developer and photographer. The portfolio features cutting-edge animations including neural network backgrounds, particle systems, and smooth scroll effects that create an immersive digital experience.
 
-[![Live Demo]([https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://your-portfolio-link.com](https://s0urabh-portfolio.netlify.app/)) 
+[![Live Demo]([https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://s0urabh-portfolio.netlify.app/)
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](https://github.com/soura8hs/s0urabh-portfolio)
 
 ## ✨ Features
