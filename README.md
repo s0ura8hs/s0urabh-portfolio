@@ -1,6 +1,6 @@
 # Sourabh Khairwal's Portfolio - Interactive Developer Portfolio
 
-![Portfolio Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2RqOWp1cnN5bG1xMnl0bGp1b3pucjV1YzB1eHZ0b2V4a3g5eDRkZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abwbzKeY8Z0bT3q/giphy.gif)
+![Portfolio Demo](Screenshot 2025-07-07 001101.png)
 
 ## 🌟 Introduction
 
