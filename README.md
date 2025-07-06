@@ -1,6 +1,6 @@
 # Sourabh Khairwal's Portfolio - Interactive Developer Portfolio
 
-![Portfolio Demo](Screenshot 2025-07-07 001101.png)
+![Portfolio Demo](https://s0urabh-portfolio.netlify.app/)
 
 ## 🌟 Introduction
 
