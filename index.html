@@ -376,7 +376,7 @@
             100% { transform: translateX(100%); }
         }
 
-        /* Education Section */
+        /* Education Section - Updated to row layout */
         #education {
             background-color: rgba(23, 42, 69, 0.5);
         }
@@ -492,7 +492,7 @@
             border: 1px solid var(--accent);
         }
 
-        /* Photography Section */
+        /* Photography Section - Updated for flexible image sizing */
         #photography {
             background-color: var(--primary);
         }
@@ -509,20 +509,22 @@
             overflow: hidden;
             margin-bottom: 30px;
             position: relative;
-            min-height: 400px;
-            max-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
+            min-height: 300px;
         }
 
         .photo-display img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 80vh;
             width: auto;
             height: auto;
             object-fit: contain;
             display: block;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .photo-info {
@@ -592,14 +594,37 @@
             margin-top: 10px;
         }
 
-        /* Projects Section */
+        /* View More Button */
+        .view-more-btn {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .view-more-btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        .hidden-item {
+            display: none;
+        }
+
+        /* Projects Section - Updated to three columns */
         #projects {
             background-color: rgba(23, 42, 69, 0.5);
         }
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
         }
@@ -621,17 +646,23 @@
         .project-image {
             height: 200px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(23, 42, 69, 0.5);
+            padding: 10px;
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.5s ease;
+            border-radius: 8px;
         }
 
         .project-card:hover .project-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .project-content {
@@ -851,6 +882,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             section {
                 padding: 80px 5%;
             }
@@ -971,7 +1006,7 @@
         <div class="about-content">
             <div class="about-text animate">
                 <h3>Learner, Developer & Photography Enthusiast</h3>
-                <p>I'm currently pursuing B.Tech in IT and Mathematical Innovation at Cluster Innovation Centre, University of Delhi. As a first-year student, I’m exploring the world of software engineering with a growing interest in web development, problem-solving, and real-world application design.</p>
+                <p>I'm currently pursuing B.Tech in IT and Mathematical Innovation at Cluster Innovation Centre, University of Delhi. As a first-year student, I'm exploring the world of software engineering with a growing interest in web development, problem-solving, and real-world application design.</p>
                 <p>I enjoy building websites using HTML, CSS, and JavaScript, and have started learning React to create more dynamic user interfaces. I also have a strong foundation in Java and C, and work comfortably with different IDEs like VS Code, IntelliJ, WebStorm, and Android Studio. Outside of tech, photography is something I genuinely love—it helps me express creativity and brings balance to my analytical mindset.</p>
                 <div class="skills-tags">
                     <span class="skill-tag">HTML</span>
@@ -1013,7 +1048,7 @@
                         <h4>Bachelor of Technology in Information Technology and Mathematical Innovations</h4>
                         <p class="institution">Delhi University</p>
                         <p class="date">2024 - 2028</p>
-                        <p>At my college Cluster Innovation Centre, I’m pursuing my degree where I’ve focused deeply on software engineering, algorithms, and web development.</p>
+                        <p>At my college Cluster Innovation Centre, I'm pursuing my degree where I've focused deeply on software engineering, algorithms, and web development.</p>
                     </div>
                     
                     <div class="education-item animate">
@@ -1029,6 +1064,7 @@
                   <p class="date">2020 - 2021</p>
                     <p>Built a foundation in core science subjects with a keen interest in computers and problem-solving. Actively participated in school-level coding and tech events.</p>
                   </div>
+                </div>
                     
                 <div class="education-column">
                     <h3><i class="fas fa-award"></i> Certifications</h3>
@@ -1082,7 +1118,7 @@
             <div class="photo-info animate">
                 <h3 id="photo-title">Morning Light at the Stadium</h3>
                 <p id="photo-description">
-                    Soft morning sun bathes the empty stands in golden light, highlighting the calm before the day’s events begin.
+                    Soft morning sun bathes the empty stands in golden light, highlighting the calm before the day's events begin.
                 </p>
                 
                 <div class="photo-meta">
@@ -1122,11 +1158,11 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-container">
+            <div class="projects-container" id="projectsContainer">
                 <!-- Project 1 -->
                 <div class="project-card animate">
                     <div class="project-image">
-                        <img src="images/12.jpg">
+                        <img src="images/12.jpg" alt="Portfolio Website Generator">
                     </div>
                     <div class="project-content">
                         <h3>Portfolio Website Generator</h3>
@@ -1146,7 +1182,7 @@
                 <!-- Project 2 -->
                 <div class="project-card animate">
                     <div class="project-image">
-                        <img src="images/13,jpg">
+                        <img src="images/13.jpg" alt="Habit Manager">
                     </div>
                     <div class="project-content">
                         <h3>Habit Manager</h3>
@@ -1166,7 +1202,7 @@
                 <!-- Project 3 -->
                 <div class="project-card animate">
                     <div class="project-image">
-                        <img src="images/14.jpg">
+                        <img src="images/14.jpg" alt="Music Player">
                     </div>
                     <div class="project-content">
                         <h3>Music Player</h3>
@@ -1183,6 +1219,9 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- View More Button (will be shown via JavaScript if needed) -->
+            <button class="view-more-btn" id="projects-view-more" style="display: none;">View More Projects</button>
         </div>
     </section>
 
@@ -1264,6 +1303,7 @@
             initPhotoGallery();
             initContactForm();
             initScrollEffects();
+            initViewMore();
         });
 
         // Enhanced Neural Network Background with 60 nodes and improved effects
@@ -1610,12 +1650,12 @@
     const photos = [
         {
             title: "Morning Light at the Stadium",
-            description: "Soft morning sun bathes the empty stands in golden light, highlighting the calm before the day’s events begin.",
+            description: "Soft morning sun bathes the empty stands in golden light, highlighting the calm before the day's events begin.",
             camera: "Realme 12+5G",
             settings: "f/1.8, 1/60s, ISO 100",
             location: "Delhi University Sports Ground",
             date: "November 5, 2024",
-            image: "images/9.jpg"
+            image: "photos/9.jpg"
         },
         {
             title: "Bird in Radiant Sky",
@@ -1624,16 +1664,16 @@
             settings: "f/1.8, 1/120s, ISO 100",
             location: "Cluster Innovation Centre Garden",
             date: "December 12, 2024",
-            image: "images/7.jpg"
+            image: "photos/7.jpg"
         },
         {
             title: "Garden Glow at Dusk",
-            description: "Warm beams of light burst through the trees, illuminating the garden’s evening hush.",
+            description: "Warm beams of light burst through the trees, illuminating the garden's evening hush.",
             camera: "Realme 12+5G",
             settings: "f/1.8, 1/4s, ISO 800",
             location: "CIC Courtyard",
             date: "January 15, 2025",
-            image: "images/8.jpg"
+            image: "photos/8.jpg"
         },
         {
             title: "Sunset Over the Amphitheatre",
@@ -1642,7 +1682,7 @@
             settings: "f/1.8, 1/30s, ISO 200",
             location: "University Amphitheatre",
             date: "February 20, 2025",
-            image: "images/5.jpg"
+            image: "photos/5.jpg"
         },
         {
             title: "Festive Blossoms Under Night Light",
@@ -1651,7 +1691,7 @@
             settings: "f/1.8, 1/10s, ISO 400",
             location: "CIC Courtyard",
             date: "March 18, 2025",
-            image: "images/6.jpg"
+            image: "photos/6.jpg"
         },
         {
             title: "Moonlit Street Silhouette",
@@ -1660,7 +1700,7 @@
             settings: "f/1.8, 1/8s, ISO 800",
             location: "Campus Road, University of Delhi",
             date: "May 3, 2025",
-            image: "images/4.jpg"
+            image: "photos/4.jpg"
         }
     ];
             
@@ -1730,6 +1770,45 @@
             
             // Initialize with first photo
             updatePhotoGallery(0);
+        }
+
+        // View More functionality
+        function initViewMore() {
+            // This function will handle view more for sections with more than 6 items
+            // Currently photos have exactly 6 items, projects have 3
+            // This is ready for when more items are added
+            
+            const sections = ['projects', 'photography']; // Add more sections as needed
+            
+            sections.forEach(sectionName => {
+                const container = document.getElementById(`${sectionName}Container`);
+                const viewMoreBtn = document.getElementById(`${sectionName}-view-more`);
+                
+                if (container && viewMoreBtn) {
+                    const items = container.querySelectorAll('.project-card, .certificate-item, .education-item');
+                    
+                    if (items.length > 6) {
+                        // Hide items beyond 6
+                        items.forEach((item, index) => {
+                            if (index >= 6) {
+                                item.classList.add('hidden-item');
+                            }
+                        });
+                        
+                        // Show view more button
+                        viewMoreBtn.style.display = 'block';
+                        
+                        // Add click handler
+                        viewMoreBtn.addEventListener('click', () => {
+                            const hiddenItems = container.querySelectorAll('.hidden-item');
+                            hiddenItems.forEach(item => {
+                                item.classList.remove('hidden-item');
+                            });
+                            viewMoreBtn.style.display = 'none';
+                        });
+                    }
+                }
+            });
         }
 
         // Mobile Menu Toggle
